@@ -9,6 +9,7 @@ import UIKit
 
 class EventCell: UICollectionViewCell {
     @IBOutlet weak var posterImage: UIImageView!
+    @IBOutlet weak var posterButton: UIButton!
     
     func configure(with viewModel: Event) {
         posterImage.image = UIImage(named: "tempPoster")

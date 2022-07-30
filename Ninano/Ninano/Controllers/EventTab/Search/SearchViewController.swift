@@ -20,6 +20,7 @@ class SearchViewController: UIViewController {
     
     private var articles: APIResponse?
     private var eventList = [Event]()
+    private var event: Event?
     
     private let numberOfCells: Int = 8
     
@@ -38,7 +39,6 @@ class SearchViewController: UIViewController {
         configNavigationTitle()
         configNavigationArea()
         fetchTopStories()
-        // Do any additional setup after loading the view.
     }
 
     private func configNavigationTitle() {
@@ -112,6 +112,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource, Sear
             return UITableViewCell()
         }
         cell.searchCategoryViewDelegate = self
+        cell.eventCellDelegate = self
         return cell
     }
     
@@ -141,5 +142,20 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource, Sear
                 print(error)
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let eventDetailView = UIStoryboard(name: "EventDetail", bundle: .main).instantiateViewController(withIdentifier: "EventDetailViewController") as? EventDetailViewController else { return }
+        eventDetailView.event = eventList[indexPath.item]
+        self.navigationController?.pushViewController(eventDetailView, animated: true)
+    }
+}
+
+extension SearchViewController: EventCellDelegate {
+    func collectionView(collectionViewCell: EventCell, index: Int, didTappedInTableViewCell: CategoryCell) {
+        guard let eventDetailView = UIStoryboard(name: "EventDetail", bundle: .main).instantiateViewController(withIdentifier: "EventDetailViewController") as? EventDetailViewController else { return }
+        eventDetailView.event = eventList[index]
+        print("HIHI")
+        self.navigationController?.pushViewController(eventDetailView, animated: true)
     }
 }

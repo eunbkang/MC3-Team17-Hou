@@ -21,10 +21,15 @@ class CategoryCell: UITableViewCell {
     @IBOutlet weak var eventCollectionView: UICollectionView!
     
     var searchCategoryViewDelegate: SearchCategoryViewShowable?
+    var eventCellDelegate: EventCellDelegate?
     
     @IBAction func didTapCategoryName(_ sender: UIButton) {
         searchCategoryViewDelegate?.didTouchCategoryButton(categoryTitle: categoryTitle ?? "", eventList: eventList)
     }
+}
+
+protocol EventCellDelegate: AnyObject {
+    func collectionView(collectionViewCell: EventCell, index: Int, didTappedInTableViewCell: CategoryCell)
 }
 
 extension CategoryCell: UICollectionViewDelegateFlowLayout {
@@ -61,5 +66,11 @@ extension CategoryCell: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.configure(with: eventList[indexPath.row])
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? EventCell else { return }
+        self.eventCellDelegate?.collectionView(collectionViewCell: cell, index: indexPath.row, didTappedInTableViewCell: self)
+        print("cell \(indexPath.row)")
     }
 }

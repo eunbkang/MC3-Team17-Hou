@@ -84,9 +84,6 @@
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title=""/>
-                                                                        <connections>
-                                                                            <segue destination="kgO-hd-Tg6" kind="show" id="Qb5-Zz-BKH"/>
-                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
@@ -98,6 +95,7 @@
                                                             </collectionViewCellContentView>
                                                             <size key="customSize" width="104" height="139"/>
                                                             <connections>
+                                                                <outlet property="posterButton" destination="qUt-Hg-Jqb" id="Ukz-cs-575"/>
                                                                 <outlet property="posterImage" destination="eHQ-v0-9J1" id="pyw-cK-zST"/>
                                                             </connections>
                                                         </collectionViewCell>
@@ -175,16 +173,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gkK-Rg-7yU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2853.6231884057975" y="-447.32142857142856"/>
-        </scene>
-        <!--EventDetail-->
-        <scene sceneID="RgX-FN-gck">
-            <objects>
-                <viewControllerPlaceholder storyboardName="EventDetail" id="kgO-hd-Tg6" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="pPW-ST-EW0"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3gN-tp-7dt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3586.9565217391305" y="-281.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yos-Z4-gWv">
