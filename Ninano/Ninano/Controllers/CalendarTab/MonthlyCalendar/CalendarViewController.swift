@@ -129,17 +129,17 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
             cell?.dateLabel.text = days[indexPath.row]
             cell?.dateLabel.font = UIFont(name: "GmarketSansTTFlight", size: 15)
             
-//            let date = days[indexPath.row]
-//            let text = yearMonthLabel.text!
+            let date = days[indexPath.row]
+            let text = yearMonthLabel.text!
                 
-//            let month = text[text.index(text.startIndex, offsetBy: 6) ..< text.index(text.startIndex, offsetBy: 8)]
-//            let trimMonth = month.trimmingCharacters(in: ["월"])
-//
-//            for event in reserveViewModel.reserveItems {
-//                if event.reserveDate?.getDateComponent() == Int(date) && event.reserveDate?.getMonthComponent() == Int(trimMonth) {
-//                    cell?.self.showDot()
-//                }
-//            }
+            let month = text[text.index(text.startIndex, offsetBy: 6) ..< text.index(text.startIndex, offsetBy: 8)]
+            let trimMonth = month.trimmingCharacters(in: ["월"])
+
+            for event in reserveViewModel.reserveItems {
+                if event.reserveDate?.getDateComponent() == Int(date) {
+                    cell?.self.showDot()
+                }
+            }
         }
         if indexPath.row % 7 == 0 {
             cell?.dateLabel.textColor = UIColor.init(hex: "B31B1B")
