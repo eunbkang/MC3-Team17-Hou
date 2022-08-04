@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="192" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="A1p-jd-meV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="192" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="A1p-jd-meV">
                                 <rect key="frame" x="0.0" y="113" width="414" height="783"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -130,7 +130,7 @@
                             </tableView>
                             <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b6Q-Ts-Aic">
                                 <rect key="frame" x="0.0" y="113" width="414" height="1"/>
-                                <color key="backgroundColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.56862745098039214" green="0.56862745098039214" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="M0q-ev-mpZ"/>
@@ -152,11 +152,12 @@
                     <navigationItem key="navigationItem" id="SfL-8Z-UhK">
                         <barButtonItem key="rightBarButtonItem" id="XZ2-ky-TWF">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="8Qy-ea-gxW">
-                                <rect key="frame" x="324.5" y="0.0" width="69.5" height="44"/>
+                                <rect key="frame" x="327" y="0.0" width="67" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="magnifyingglass.circle.fill" catalog="system" title="">
+                                <buttonConfiguration key="configuration" style="plain" image="Image" title="">
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
+                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="10" bottom="0.0" trailing="0.0"/>
                                     <color key="baseForegroundColor" red="0.81901115179999995" green="0.3260309696" blue="0.32545870539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -174,11 +175,21 @@
             </objects>
             <point key="canvasLocation" x="2853.6231884057975" y="-447.32142857142856"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--EventDetail-->
+        <scene sceneID="RgX-FN-gck">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EventDetail" id="kgO-hd-Tg6" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="pPW-ST-EW0"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3gN-tp-7dt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3586.9565217391305" y="-281.25"/>
+        </scene>
+        <!--추천 공연-->
         <scene sceneID="yos-Z4-gWv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H7d-Or-5tN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="eye.fill" catalog="system" selectedImage="eye.fill" id="B8Q-gO-20f"/>
+                    <tabBarItem key="tabBarItem" title="추천 공연" image="eye.fill" catalog="system" selectedImage="eye.fill" id="B8Q-gO-20f"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iF5-3w-uni">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -198,9 +209,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Image" width="43" height="43"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="eye.fill" catalog="system" width="128" height="78"/>
-        <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

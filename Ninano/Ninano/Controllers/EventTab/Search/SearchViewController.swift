@@ -39,6 +39,8 @@ class SearchViewController: UIViewController {
         configNavigationTitle()
         configNavigationArea()
         fetchTopStories()
+
+        categoryTableView.contentInset.top = 10
     }
 
     private func configNavigationTitle() {
