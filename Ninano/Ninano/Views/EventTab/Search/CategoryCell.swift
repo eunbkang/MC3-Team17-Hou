@@ -16,6 +16,8 @@ class CategoryCell: UITableViewCell {
         }
     }
     
+    weak var delegate: CollectionViewTableViewCellDelegate?
+    
     @IBOutlet weak var categoryName: UIButton!
     @IBOutlet weak var categoryChevron: UIButton!
     @IBOutlet weak var eventCollectionView: UICollectionView!
@@ -25,6 +27,10 @@ class CategoryCell: UITableViewCell {
     @IBAction func didTapCategoryName(_ sender: UIButton) {
         searchCategoryViewDelegate?.didTouchCategoryButton(categoryTitle: categoryTitle ?? "", eventList: eventList)
     }
+}
+
+protocol CollectionViewTableViewCellDelegate: AnyObject {
+    func collectionViewTableViewCellDidTapCell(_ cell: CategoryCell, viewModel: Event)
 }
 
 extension CategoryCell: UICollectionViewDelegateFlowLayout {
@@ -62,4 +68,19 @@ extension CategoryCell: UICollectionViewDelegate, UICollectionViewDataSource {
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let eventDetailView = UIStoryboard(name: "EventDetail", bundle: .main).instantiateViewController(withIdentifier: "EventDetailViewController") as? EventDetailViewController else { return }
+        eventDetailView.event = eventList[indexPath.row]
+        if let viewModel = eventDetailView.event {
+            self.delegate?.collectionViewTableViewCellDidTapCell(self, viewModel: viewModel)
+        }
+    }
 }
+
+//func didTouchCategoryButton(categoryTitle: String, eventList: [Event]) {
+//    guard let searchResultView = UIStoryboard(name: "SearchResult", bundle: .main).instantiateViewController(withIdentifier: "SearchResultViewController") as? SearchResultViewController else { return }
+//    searchResultView.eventList = eventList
+//    searchResultView.viewCatagory = .searchCatagory(navigationTitle: categoryTitle)
+//    self.navigationController?.pushViewController(searchResultView, animated: true)
+//}

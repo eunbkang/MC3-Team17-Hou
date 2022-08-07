@@ -20,6 +20,7 @@ class SearchViewController: UIViewController {
     
     private var articles: APIResponse?
     private var eventList = [Event]()
+    private var event: Event?
     
     private let numberOfCells: Int = 8
     
@@ -85,6 +86,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource, Sear
         cell.categoryTitle = categoryTitle
         cell.categoryName.setAttributedTitle(attributedTitle, for: .normal)
         cell.categoryName.titleLabel?.adjustsFontForContentSizeCategory = true
+        cell.delegate = self
         
         switch indexPath.row {
         case 0: // 니나노의 추천 공연
@@ -175,3 +177,19 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource, Sear
         }
     }
 }
+
+extension SearchViewController: CollectionViewTableViewCellDelegate {
+    func collectionViewTableViewCellDidTapCell(_ cell: CategoryCell, viewModel: Event) {
+//        DispatchQueue.main.async { [weak self] in
+            let eventDetailViewController = EventDetailViewController()
+            self.navigationController?.pushViewController(eventDetailViewController, animated: true)
+//        }
+    }
+}
+
+//func didTouchCategoryButton(categoryTitle: String, eventList: [Event]) {
+//    guard let searchResultView = UIStoryboard(name: "SearchResult", bundle: .main).instantiateViewController(withIdentifier: "SearchResultViewController") as? SearchResultViewController else { return }
+//    searchResultView.eventList = eventList
+//    searchResultView.viewCatagory = .searchCatagory(navigationTitle: categoryTitle)
+//    self.navigationController?.pushViewController(searchResultView, animated: true)
+//}

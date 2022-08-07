@@ -79,15 +79,6 @@
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHQ-v0-9J1">
                                                                         <rect key="frame" x="0.0" y="0.0" width="104" height="139"/>
                                                                     </imageView>
-                                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUt-Hg-Jqb">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="104" height="139"/>
-                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="plain" title=""/>
-                                                                        <connections>
-                                                                            <segue destination="kgO-hd-Tg6" kind="show" id="Qb5-Zz-BKH"/>
-                                                                        </connections>
-                                                                    </button>
                                                                 </subviews>
                                                                 <constraints>
                                                                     <constraint firstAttribute="trailing" secondItem="eHQ-v0-9J1" secondAttribute="trailing" id="9tG-Fd-uf2"/>
@@ -176,16 +167,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gkK-Rg-7yU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2853.6231884057975" y="-447.32142857142856"/>
-        </scene>
-        <!--EventDetail-->
-        <scene sceneID="RgX-FN-gck">
-            <objects>
-                <viewControllerPlaceholder storyboardName="EventDetail" id="kgO-hd-Tg6" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="pPW-ST-EW0"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3gN-tp-7dt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3586.9565217391305" y="-281.25"/>
         </scene>
         <!--추천 공연-->
         <scene sceneID="yos-Z4-gWv">
